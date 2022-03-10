@@ -1,17 +1,17 @@
 # Pipeline from API to NoSQL database
 "Desafio Twitter Stream"
 
-This git was made to present a code to extract and store data from Twitter's filter API to MySQL remote server.
+This git was made to present a code to extract and store data from Twitter's filter API to MongDB remote server.
 
 ## Requirements
 
 The main versions used to run the code are:
 
   - Python 3.8.10;
-  - Pandas 1.4.1;
-  - Mysql-connector-python 8.0.28;
-  - requests 2.22.0.
-  - MySQL 8.0.28
+  - pymongo 4.0.1
+  - requests 2.22.0
+  - Mongo Server v4.4.12
+
 
 ## Executable files
 
@@ -37,14 +37,14 @@ These steps are:
  
  ## SQL Storage
  
- After open the stream, all data is automatically sent to a MySQL remote database called **Tweets** where each keyword has its own table.
+ After open the stream, all data is automatically sent to a MongoDB remote database called **Tweets** where each keyword has its own collection.
  
  The methods to open and store the data in the remote server are on the **database.py** file.
  
  ## Queries 
  
  An independent code was made to fetch data from the database created.
- The main code, written in SQL, was designed to answer three question:
+ The main code, written in NoSQL, was designed to answer three question:
  
   1. Qual o horário do tweet mais antigo e do mais recente para cada regra?
   2. Qual o período do dia em que cada regra se torna mais frequente?
@@ -56,7 +56,7 @@ curto?
  ## Observations
  
  - All the tweets are been stored in a timezone three hours later than here in Brazil.
- - The key credentials to access the Stream and the server credentials to login are stored in **credentials.py** file.
+ - The key credentials to access the Stream and the server credentials to login are stored in **credentials.py** file. (REMOVED)
  - More info about Twitter's API can be found [here](https://developer.twitter.com/en/docs/twitter-api/tweets/filtered-stream/introduction)
 
 
